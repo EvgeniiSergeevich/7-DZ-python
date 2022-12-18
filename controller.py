@@ -22,7 +22,8 @@ contacts = f.read().split('\n')
 
 # print(model.get_cont('Иркутск', contacts))
 
-model.put_cont("directory.txt", "Семёнов Иван Семёнович", "Великий Новгород", 3456333)
+# model.put_cont("directory.txt", "Семёнов Иван Семёнович", "Великий Новгород", 3456333)
 
+model.export_directory('123.csv', contacts)
 
 f.close()

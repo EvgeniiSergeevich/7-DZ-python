@@ -48,16 +48,21 @@ def get_cont(to_find, contacts):                            # Получает �
     return tmp1
 
 
-def put_cont(file_name, name, addres, phone):                       # Добавляет в словарь новую запись. На месте переноса строки 
-    f = codecs.open(file_name, 'a', "utf_8_sig")                    # появляется ромб с вопросом внутри. При открытии в блокноте его нет
-    str_dir = "\n" + name + " " + addres + " " + str(phone)
-    f.write(str_dir)
-    f.close()
+def put_cont(file_name, name, addres, phone):                    # Добавляет в словарь новую запись. На месте переноса строки 
+    with codecs.open(file_name, 'a', "utf_8_sig") as f:           # появляется ромб с вопросом внутри. При открытии в блокноте его нет
+        str_dir = "\n" + name + " " + addres + " " + str(phone)
+        f.write(str_dir)
 
 
 def import_directory(directory):
+    
     return 0
 
-def export_directory(directory):
-    return 0
+def export_directory(directory, file):
+    with codecs.open(directory, 'a', "utf_8_sig") as f:
+        for i in range(len(file)):
+            f.write(file[i] +'\n')
+        
+
+
 
