@@ -18,6 +18,11 @@ contacts = f.read().split('\n')
 
 # print(model.get_cont_addres("Москва", contacts))
 
-print(model.get_cont(456321, contacts))
+# print(model.get_cont(456321, contacts))
 
 # print(model.get_cont('Иркутск', contacts))
+
+model.put_cont("directory.txt", "Семёнов Иван Семёнович", "Великий Новгород", 3456333)
+
+
+f.close()

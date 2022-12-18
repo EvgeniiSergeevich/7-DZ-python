@@ -1,4 +1,4 @@
-
+import codecs
 # def get_cont_full_name(first_name, second_name, last_name, contacts):
 #     for i in range(len(contacts) - 1):
 #         tmp = contacts[i].split()
@@ -40,7 +40,6 @@ def get_cont(to_find, contacts):                            # Получает �
             tmp = contacts[i].lower()
             if tmp.find(to_find) > -1 and tmp[tmp.find(to_find) + len(to_find)] == " ":
                 tmp1.append(contacts[i])
-            # print(tmp1)
     elif type(to_find) == int:
         for i in range(len(contacts)):
             tmp = contacts[i].split()
@@ -49,8 +48,12 @@ def get_cont(to_find, contacts):                            # Получает �
     return tmp1
 
 
-def put_cont(name, phone, addres):
-    return 0
+def put_cont(file_name, name, addres, phone):                       # Добавляет в словарь новую запись. На месте переноса строки 
+    f = codecs.open(file_name, 'a', "utf_8_sig")                    # появляется ромб с вопросом внутри. При открытии в блокноте его нет
+    str_dir = "\n" + name + " " + addres + " " + str(phone)
+    f.write(str_dir)
+    f.close()
+
 
 def import_directory(directory):
     return 0
