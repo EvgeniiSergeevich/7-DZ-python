@@ -68,10 +68,12 @@ def import_directory(directory):
         contacts = f.read().split('\n')
     return contacts
 
-def export_directory(new_directory, file):
-    with codecs.open(new_directory, 'a', "utf_8") as f:
-        for i in range(len(file)):
-            f.write(file[i] +'\n')
+def export_directory(new_file, directory):
+    with codecs.open(new_file, 'a', "utf_8") as f:
+        for i in range(len(directory) - 1):
+            f.write(directory[i] +'\n')
+        for i in range(len(directory) - 1, len(directory)):
+            f.write(directory[i])    
         
 
 

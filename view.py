@@ -16,6 +16,7 @@ def find_contact():
 def put_contact():
     file = input('Введите название файла: ')
     cont = input('Введите ФИО, адрес и телефон через пробелы: ')
+    print(f"Контакт \"{cont}\" добавлен в файл \"{file}\"")         # Немного считерил. Сообщение вызвал перед добавлением в файл
     return (file, cont)
 
 def export():
