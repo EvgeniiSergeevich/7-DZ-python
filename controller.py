@@ -1,29 +1,19 @@
 import model
-import codecs
+import view
+
+directory = view.import_dir()
+contacts = model.import_directory(directory)
+# def print_directory():
+#     view.print_contacts(contacts)
+
+def find_contact():
+    find = view.find_contact()
+    cont = model.find_cont(find, contacts)
+    view.print_contacts(cont)
+
+# l = view.put_contact()
+# model.put_cont(l[0], l[1])
 
 
-f = codecs.open( "directory.txt", "r", "utf_8_sig" )
+# model.export_directory('123.csv', contacts)
 
-contacts = f.read().split('\n')
-
-
-# print(contacts)
-
-# model.get_cont_full_name('asd','asf', 'asfasf,', contacts)
-# print(model.get_cont_full_name('Сидоров','Пётр', 'Петрович', contacts))
-
-# print(model.get_cont_part_name('Иванов', contacts))
-
-# print(model.get_cont_phone(325568, contacts))
-
-# print(model.get_cont_addres("Москва", contacts))
-
-# print(model.get_cont(456321, contacts))
-
-# print(model.get_cont('Иркутск', contacts))
-
-# model.put_cont("directory.txt", "Семёнов Иван Семёнович", "Великий Новгород", 3456333)
-
-model.export_directory('123.csv', contacts)
-
-f.close()
